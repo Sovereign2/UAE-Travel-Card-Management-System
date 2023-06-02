@@ -15,12 +15,24 @@
     <description>card-system-service</description>
     <properties>
         <java.version>1.8</java.version>
+        <sonar.host.url>http://localhost:9000</sonar.host.url>
+        <sonar.token>sqp_042bc05ad48a3ad13e1aacbb3e4420703180e563</sonar.token>
+        <sonar.login>admin</sonar.login>
+        <sonar.password>Skk88tter</sonar.password>
+        <sonar.projectkey>Travel-Card-System-Service</sonar.projectkey>
+       
     </properties>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <artifactId>spring-boot-starter-web</artifactId>           
         </dependency>
+<!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-jar-plugin -->
+<dependency>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-jar-plugin</artifactId>
+    <version>3.2.0</version>
+</dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -42,7 +54,11 @@
             <artifactId>junit-jupiter</artifactId>
             <scope>test</scope>
         </dependency>
-
+ <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-boot-starter</artifactId>
+            <version>3.0.0</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -59,6 +75,7 @@
                     </excludes>
                 </configuration>
             </plugin>
+        
         </plugins>
     </build>
 

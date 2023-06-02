@@ -15,9 +15,17 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication(scanBasePackages = {"com.demo.travelcardsystem"})
+
 public class TravelcardsystemApplication{
 
+    private static Set<Station> stations;
+
+    public static Set<Station> getStations() {
+        return stations;
+    }
+
     public static void main(String[] args) {
+        
         SpringApplication.run(TravelcardsystemApplication.class, args);
     }
 
@@ -35,7 +43,7 @@ public class TravelcardsystemApplication{
 
     @Bean
     public Boolean loadAllStation(InMemoryCardTransactionRepository inMemoryCardTransactionRepository) {
-        Set<Station> stations = new HashSet<>();
+         stations = new HashSet<>();
 
         //ADD Algubaiba
         stations.add(new Station("Algubaiba", new HashSet<>(Arrays.asList(Zone.ONE))));
@@ -45,6 +53,10 @@ public class TravelcardsystemApplication{
         stations.add(new Station("Bur Dubai", new HashSet<>(Arrays.asList(Zone.THREE))));
         //ADD Deirah
         stations.add(new Station("Deirah", new HashSet<>(Arrays.asList(Zone.TWO))));
+        //ADD Abu Dhabi
+        stations.add(new Station("Abu Dhabi", new HashSet<>(Arrays.asList(Zone.THREE, Zone.ONE))));
+        //ADD Ras Al Kheima
+        stations.add(new Station("RAK", new HashSet<>(Arrays.asList(Zone.TWO))));
 
         return inMemoryCardTransactionRepository.addAllStationsToStationStore(stations);
     }

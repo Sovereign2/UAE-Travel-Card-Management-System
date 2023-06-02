@@ -85,7 +85,7 @@ class RechargeTravelCardTests extends IntegrationTest{
         travelCard.setBalance(30);
 
         //WHEN -  User try to register himself
-       String errorMsg =  mockMvc.perform(post("/api/card/register")
+        String errorMsg =  mockMvc.perform(post("/api/card/register")
                         .contentType("application/json")
                         .content(objectMapper.writeValueAsString(travelCard)))
                 //THEN -  status should be not acceptable

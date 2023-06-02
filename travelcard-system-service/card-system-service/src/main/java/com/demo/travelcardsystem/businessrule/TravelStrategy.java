@@ -19,7 +19,7 @@ public class TravelStrategy {
     @NonNull
     private RuleCollection ruleCollection;
 
-    public Consumer<Double> anyWhereInZoneOneStrategy = chargeableAmount -> {
+    public  Consumer<Double> anyWhereInZoneOneStrategy = chargeableAmount -> {
         Rule rule = new Rule();
         rule.setChargeableFare(chargeableAmount);
 
@@ -93,7 +93,7 @@ public class TravelStrategy {
         anyThreeZoneStrategy.accept(3.20);
         anyJourneyByBus.accept(1.80, TransportType.BUS);
 
-        this.ruleCollection.setMaxFare(3.20);
+        this.ruleCollection.setMaxFare(5.0);
 
         return this.ruleCollection;
     }

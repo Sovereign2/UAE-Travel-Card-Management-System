@@ -7,6 +7,7 @@ import lombok.Data;
 
 import java.util.HashSet;
 import java.util.Set;
+import java.util.function.DoubleConsumer;
 
 @Data
 public class Rule {
